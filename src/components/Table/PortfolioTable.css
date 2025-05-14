@@ -1,0 +1,9 @@
+.gain {
+  color: green;
+  font-weight: 500;
+}
+
+.loss {
+  color: red;
+  font-weight: 500;
+}
