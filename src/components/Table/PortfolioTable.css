@@ -1,9 +1,26 @@
 .gain {
-  color: green;
-  font-weight: 500;
+  color: green !important;
+  font-weight: bold !important;
 }
 
 .loss {
-  color: red;
-  font-weight: 500;
+  color: red !important;
+  font-weight: bold !important;
+}
+
+table td,
+table th {
+  padding: 8px 12px !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+table thead th {
+  min-width: 100px;
+  height: 48px;
+  text-align: center;
+}
+
+.table-responsive {
+  overflow-x: auto;
 }
