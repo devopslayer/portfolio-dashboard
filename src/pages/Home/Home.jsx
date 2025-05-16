@@ -1,16 +1,25 @@
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "../../components/Header/Header";
-import PortfolioTable from "../../components/Table/PortfolioTable";
 import "./Home.css";
 
 const Home = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   return (
-    <>
-      <Header />
-      <div className="container mt-4">
-        <h2 className="mb-4">My Portfolio</h2>
-        <PortfolioTable />
+    <div className="home-layout">
+      <Sidebar isOpen={isSidebarOpen} />
+      <div className="main-content">
+        <Header toggleSidebar={toggleSidebar} />
+        <div className={`page-content ${isSidebarOpen ? "shifted" : ""}`}>
+          <div className="page-container">
+            <Outlet />
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

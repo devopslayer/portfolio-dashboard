@@ -11,6 +11,7 @@ const PortfolioTable = () => {
 
   return (
     <div className="table-responsive">
+      <h2 className="mb-4">My portfolio</h2>
       <table className="table table-bordered table-hover table-sm">
         <thead className="table-dark text-center align-middle">
           <tr>
