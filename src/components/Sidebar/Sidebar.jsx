@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="sidebar-content mt-3">
         <NavLink
-          to="/dashboard"
+          to="/portfolio-dashboard/dashboard"
           className="nav-link text-white mb-3"
           activeclassname="active"
           onClick={handleNavClick}
@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
           <FiHome className="me-2" /> Dashboard
         </NavLink>
         <NavLink
-          to="/portfolio"
+          to="/portfolio-dashboard/portfolio"
           className="nav-link text-white mb-3"
           activeclassname="active"
           onClick={handleNavClick}
