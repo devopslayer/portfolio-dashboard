@@ -13,11 +13,20 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<Navigate to="dashboard" />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="*" element={<NoPageError />} />
+        <Route path="/portfolio-dashboard/" element={<Home />}>
+          <Route
+            index
+            element={<Navigate to="/portfolio-dashboard/dashboard" />}
+          />
+          <Route
+            path="/portfolio-dashboard/dashboard"
+            element={<Dashboard />}
+          />
+          <Route
+            path="/portfolio-dashboard/portfolio"
+            element={<Portfolio />}
+          />
+          <Route path="/portfolio-dashboard/*" element={<NoPageError />} />
         </Route>
       </Routes>
     </Router>
