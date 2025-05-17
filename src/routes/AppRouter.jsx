@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Dashboard from "../components/Dashboard/Dashboard";
-import PortfolioTable from "../components/Table/PortfolioTable";
+import Portfolio from "../pages/Portfolio/Portfolio";
+import NoPageError from "../pages/NoPageError/NoPageError";
 
 const AppRouter = () => {
   return (
@@ -15,7 +16,8 @@ const AppRouter = () => {
         <Route path="/" element={<Home />}>
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="portfolio" element={<PortfolioTable />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="*" element={<NoPageError />} />
         </Route>
       </Routes>
     </Router>

@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className="home-layout">
-      <Sidebar isOpen={isSidebarOpen} />
+      <Sidebar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <div className="main-content">
         <Header toggleSidebar={toggleSidebar} />
         <div className={`page-content ${isSidebarOpen ? "shifted" : ""}`}>

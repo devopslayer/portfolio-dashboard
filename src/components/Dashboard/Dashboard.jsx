@@ -1,5 +1,8 @@
 import SummaryCard from "../SummaryCard/SummaryCard";
 import usePortfolioData from "../../hooks/usePortfolioData";
+import SectorPieChart from "../Charts/SectorPieChart";
+import GainLossBarChart from "../Charts/GainLossBarChart";
+import { formatNumber } from "../../utils/formatNumber";
 
 const Dashboard = () => {
   const { sectors } = usePortfolioData();
@@ -15,7 +18,7 @@ const Dashboard = () => {
 
   const gainLoss = totals.presentValue - totals.investment;
   const gainLossPercentage = totals.investment
-    ? ((gainLoss / totals.investment) * 100).toFixed(2)
+    ? formatNumber((gainLoss / totals.investment) * 100)
     : 0;
 
   return (
@@ -25,24 +28,32 @@ const Dashboard = () => {
         <div className="col">
           <SummaryCard
             title="Total Investment"
-            value={`₹${totals.investment.toFixed(2)}`}
+            value={`₹${formatNumber(totals.investment)}`}
             bg="warning"
           />
         </div>
         <div className="col">
           <SummaryCard
             title="Present Value"
-            value={`₹${totals.presentValue.toFixed(2)}`}
+            value={`₹${formatNumber(totals.presentValue)}`}
             bg="info"
           />
         </div>
         <div className="col">
           <SummaryCard
             title="Gain / Loss"
-            value={`₹${gainLoss.toFixed(2)} (${gainLossPercentage}%)`}
+            value={`₹${formatNumber(gainLoss)} (${gainLossPercentage}%)`}
             bg={gainLoss >= 0 ? "success" : "danger"}
             textColor="white"
           />
+        </div>
+      </div>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
+        <div className="col">
+          <SectorPieChart />
+        </div>
+        <div className="col">
+          <GainLossBarChart />
         </div>
       </div>
     </div>

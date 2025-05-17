@@ -27,3 +27,9 @@
   height: calc(100vh - 100px);
   overflow-y: auto;
 }
+
+@media (max-width: 767px) {
+  .page-content.shifted {
+    margin-left: 0;
+  }
+}

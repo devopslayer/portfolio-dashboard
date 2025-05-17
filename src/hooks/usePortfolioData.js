@@ -21,7 +21,7 @@ const usePortfolioData = () => {
 
   useEffect(() => {
     loadData();
-    const interval = setInterval(loadData, 60000);
+    const interval = setInterval(loadData, 15000);
     return () => clearInterval(interval);
   }, []);
 
