@@ -11,7 +11,7 @@ import NoPageError from "../pages/NoPageError/NoPageError";
 
 const AppRouter = () => {
   return (
-    <Router basename="/portfolio-dashboard">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Navigate to="dashboard" />} />
